@@ -9,6 +9,7 @@ def encrypt():
     pw = password_entry.get()
     key = aes_utils.encrypt_file_aes(file, pw)
     result_label.config(text=f"Key: {key}")
+    print(f"Key: {key}")
 
 def decrypt():
     file = filedialog.askopenfilename()
@@ -17,6 +18,7 @@ def decrypt():
     pw = password_entry.get()
     out = aes_utils.decrypt_file_aes(file, pw)
     result_label.config(text=f"Output: {out}")
+    print(f"Output: {out}")
 
 root = tk.Tk()
 root.title("SecureCrypto GUI")
